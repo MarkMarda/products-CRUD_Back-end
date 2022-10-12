@@ -1,6 +1,6 @@
 const Products = require("./products.models");
 
-const initModels = {
+const initModels = () => {
 
   Products
 
