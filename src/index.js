@@ -1,5 +1,7 @@
 const express = require("express");
 
+const config = require("./config");
+
 const app = express();
 
 app.use(express.json());
@@ -13,5 +15,5 @@ app.get("/", (req, res) => {
 app.listen(9000, () => {
 
   console.log(`Server started at ${port}`);
-
+  
 });
