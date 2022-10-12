@@ -2,6 +2,8 @@ const express = require("express");
 
 const config = require("./config");
 
+const db = require("./utils/database");
+
 const app = express();
 
 app.use(express.json());
@@ -12,8 +14,8 @@ app.get("/", (req, res) => {
 
 });
 
-app.listen(9000, () => {
+app.listen(config.port, () => {
 
-  console.log(`Server started at ${port}`);
+  console.log(`Server started at ${config.port}`);
   
 });

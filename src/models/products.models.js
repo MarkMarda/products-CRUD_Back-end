@@ -1,8 +1,8 @@
-const db = require("../utils/database");
-
 const {DataTypes} = require("sequelize");
 
-const Products = {
+const db = require("../utils/database");
+
+const Products = db.define("products", {
   id: {
     type: DataTypes.UUID,
     primaryKey: true,
@@ -24,4 +24,6 @@ const Products = {
     type: DataTypes.BOOLEAN,
     field: "is_available"
   }
-}
+});
+
+module.exports = Products;
