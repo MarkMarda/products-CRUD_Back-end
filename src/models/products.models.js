@@ -24,6 +24,7 @@ const Products = db.define("products", {
   isAvailable: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
+    defaultValue: true,
     field: "is_available"
   }
 

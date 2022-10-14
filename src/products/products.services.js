@@ -5,10 +5,10 @@ const getAllProducts = (req, res) => {
 
   productsControllers.getAllProducts()
     .then(data => {
-      res.status(200).json(data)
+      res.status(200).json(data);
     })
     .catch(err => {
-      res.status(400).json({message: err.message})
+      res.status(400).json({message: err.message});
     });
 
 };
@@ -35,7 +35,7 @@ const postNewProduct = (req, res) => {
 
   const data = req.body;
 
-  if (data.name && data.category && data.price && data.isAvailable) {
+  if (data.name && data.category && data.price) {
     productsControllers.createProduct(data)
       .then(response => {
         res.status(201).json(response);
@@ -76,7 +76,7 @@ const putProduct = (req, res) => {
 
   const {name, category, price, isAvailable} = req.body;
 
-  if (name && category && price && isAvailable) {
+  if (name && category && price) {
     productsControllers.editProduct(id, {name, category, price, isAvailable})
       .then(response => {
         //To validate if an Id does exist or doesn't
